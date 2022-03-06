@@ -8,6 +8,8 @@ def main():
     wb = px.load_workbook('../DATA/presidents.xlsx')
     ws = wb['US Presidents']
 
+    print(ws.dimensions)
+
     insert_cells(ws)
     delete_cells(ws)
     move_cells(ws)

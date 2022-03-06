@@ -29,7 +29,9 @@ def add_age_at_inauguration(ws):
         inaugural_date = make_date(ws.cell(row=row, column=8).value)
         raw_age_took_office = inaugural_date - birth_date
         age_took_office = raw_age_took_office.days / 365.25
-        ws.cell(row=row, column=new_col).value = age_took_office
+        cell = ws.cell(row=row, column=new_col)
+        cell.value = age_took_office
+        cell.number_format = "0.00"
 
 
 if __name__ == '__main__':
