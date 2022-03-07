@@ -1,3 +1,4 @@
+from pprint import pprint
 import sys
 import requests
 
@@ -15,10 +16,23 @@ def main(args):
         BASE_URL + args[0],
         params={'key': API_KEY},
         # ssl, proxy, cookies, headers, etc.
+        # header = header_dict,
+        # proxies = proxy_dict,
+        # get_params = params_dict,
+        # post_data = data_dict
+        # cookies = cookie_dict
     )  # <3>
 
     if response.status_code == requests.codes.OK:  # 200?
+        print("=" * 60)
+        print("=" * 60)
+        print(response.text)
+        print("=" * 60)
+        print("=" * 60)
         data = response.json()  # <4>
+        pprint(data)
+        print("=" * 60)
+        print("=" * 60)
         for entry in data: # <5>
             if isinstance(entry, dict):
                 meta = entry.get("meta")
