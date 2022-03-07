@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+from pprint import pprint
 import json
 
 with open('../DATA/solar.json') as solar_in:  # <1>
@@ -8,8 +8,8 @@ with open('../DATA/solar.json') as solar_in:  # <1>
 # json.loads(STRING)
 # json.load(FILE_OBJECT)
 
-# print(solar)
-
+pprint(solar)
+print('-' * 60)
 print(solar['innerplanets'])  # <3>
 print('*' * 60)
 print(solar['innerplanets'][0]['name'])

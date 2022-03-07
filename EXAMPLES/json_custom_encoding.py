@@ -25,13 +25,6 @@ parrots = [  # <3>
 ]
 
 
-def encode(obj):  # <4>
-    if isinstance(obj, date):  # <5>
-        return obj.ctime()  # <6>
-    elif isinstance(obj, Parrot):  # <7>
-        return {'name': obj.name, 'color': obj.color}  # <8>
-    return obj  # <9>
-
 
 data = {  # <10>
     'spam': [1, 2, 3],
@@ -39,5 +32,14 @@ data = {  # <10>
     'toast': date(2014, 8, 1),
     'parrots': parrots,
 }
+
+
+def encode(obj):  # <4>
+    if isinstance(obj, date):  # <5>
+        return obj.ctime()  # <6>
+    elif isinstance(obj, Parrot):  # <7>
+        return {'name': obj.name, 'color': obj.color}  # <8>
+    return obj  # <9>
+
 
 print(json.dumps(data, default=encode, indent=4))  # <11>

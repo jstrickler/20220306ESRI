@@ -11,14 +11,21 @@ with paramiko.Transport(('localhost', 22)) as transport:  # <.>
         print(item)
     print('-' * 60)
 
-    remote_file = os.path.join(REMOTE_DIR, 'betsy.txt')  # <.>
-    sftp.mkdir("testing")
+    try:
+        sftp.rmdir(REMOTE_DIR)
+    except OSError as err:
+        print(err)
+    sftp.mkdir(REMOTE_DIR)
 
     # sftp.put(local-file)
     # sftp.put(local-file, remote-file)
-    sftp.put('../DATA/alice.txt', 'text_files/betsy.txt')  # <.>
+    remote_path = os.path.join(REMOTE_DIR, 'betsy.txt')  # <.>
+    sftp.put('../DATA/alice.txt', remote_path)  # <.>
     sftp.put('../DATA/alice.txt', 'alice.txt')
-    sftp.put('../DATA/alice.txt', 'text_files')
-    sftp.get(remote_file, 'eileen.txt')  # <.>
+    sftp.get(remote_path, 'eileen.txt')  # <.>
+    print(sftp.listdir())
+    print()
+    print(sftp.listdir(REMOTE_DIR))
+
 
 

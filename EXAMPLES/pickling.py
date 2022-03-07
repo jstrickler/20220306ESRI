@@ -16,6 +16,10 @@ colors = [
 data = [  # <2>
     colors,
     airports,
+    5.97,
+    8.649,
+    (3/7),
+    1.33,
 ]
 
 with open('../TEMP/pickled_data.pic', 'wb') as pic_out:  # <3>
