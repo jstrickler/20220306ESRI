@@ -3,7 +3,7 @@
 import random
 from multiprocessing import Pool
 
-POOL_SIZE = 30  # <1>
+POOL_SIZE = 32  # <1>
 
 with open('../DATA/words.txt') as words_in:
     WORDS = [w.strip() for w in words_in]  # <2>

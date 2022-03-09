@@ -5,7 +5,7 @@ from threading import Thread, Lock as tlock
 import time
 
 NUM_ITEMS = 25000
-POOL_SIZE = 100
+POOL_SIZE = 64
 
 q = queue.Queue(0)  # <1>
 

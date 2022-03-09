@@ -2,8 +2,6 @@
 import re
 import fileinput
 import argparse
-from glob import glob  # <1>
-from itertools import chain  # <2>
 
 arg_parser = argparse.ArgumentParser(description="Emulate grep with python")  # <3>
 
@@ -12,6 +10,8 @@ arg_parser.add_argument(
     dest='ignore_case', action='store_true',
     help='ignore case'
 )  # <4>
+
+arg_parser.add_argument('-n', dest="show_name", action="store_true", help="display file name")
 
 arg_parser.add_argument(
     'pattern', help='Pattern to find (required)'
@@ -30,9 +30,8 @@ print('-' * 40)
 
 regex = re.compile(args.pattern, re.I if args.ignore_case else 0)  # <8>
 
-filename_gen = (glob(f) for f in args.filenames)  # <9>
-filenames = chain.from_iterable(filename_gen)  # <10>
-
-for line in fileinput.input(filenames):  # <11>
+for line in fileinput.input(args.filenames):  # <11>
     if regex.search(line):
+        if args.show_name:
+            print(fileinput.filename(), end=": ")
         print(line.rstrip())

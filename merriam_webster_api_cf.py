@@ -3,7 +3,7 @@ import concurrent.futures
 import requests
 import random
 
-NUM_WORDS = 10
+NUM_WORDS = 300
 
 BASE_URL = 'https://www.dictionaryapi.com/api/v3/references/collegiate/json/'  # <1>
 

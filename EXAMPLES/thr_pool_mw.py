@@ -13,7 +13,7 @@ search_terms = [  # <4>
     'wombat',
     'frog', 'muntin', 'automobile', 'green', 'connect',
     'vial', 'battery', 'computer', 'sing', 'park',
-    'ladle', 'ram', 'dog', 'scalpel'
+    'ladle', 'ram', 'dog', 'scalpel', 'mezuza'
 ]
 
 

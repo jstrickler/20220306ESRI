@@ -6,7 +6,7 @@ from queue import Empty
 import time
 
 NUM_ITEMS = 25000  # <1>
-POOL_SIZE = 100
+POOL_SIZE = 64
 
 
 class RandomWord():  # <2>

@@ -1,0 +1,23 @@
+presidents:
+- assassinated: false
+  birthplace: Westmoreland County
+  birthstate: Virginia
+  dob: 1732-02-22
+  dod: 1799-12-14
+  firstname: George
+  lastname: Washington
+  party: null
+  term:
+  - 1789-04-30
+  - 1797-03-04
+- assassinated: false
+  birthplace: Braintree, Norfolk
+  birthstate: Massachusetts
+  dob: 1735-10-30
+  dod: 1826-07-04
+  firstname: John
+  lastname: Adams
+  party: Federalist
+  term:
+  - 1797-03-04
+  - 1801-03-04
